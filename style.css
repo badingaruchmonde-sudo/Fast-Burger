@@ -1,0 +1,511 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f5f5f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+
+header {
+  background-color: #d9400b;
+  color: #fff;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0d8;
+}
+
+.stat {
+  background-color: #faf9f6;
+  border: 1px solid #e8e6df;
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.stat-val {
+  font-size: 40px;
+  font-weight: bold;
+  color: #d9400b;
+}
+
+.stat-lbl {
+  font-size: 20px;
+  margin-top: 3px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+/*myLahout*/
+.app {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  padding: 30px 32px;
+  align-items: start;
+}
+
+.side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/*Mes panels */
+.panel {
+  background-color: #fff;
+  border: 1px solid #e0e0d8;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.panel-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+
+.add-form {
+  background-color: #faf9f6;
+  border: 1px solid #e8e6df;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.add-form-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 13px;
+  border: 1px solid #d0cfc7;
+  border-radius: 15px;
+  background-color: #fff;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #e95625;
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d0cfc7;
+  border-radius: 6px;
+  padding: 5px 10px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.search-bar input {
+  border: none;
+  padding: 7px 0;
+  flex: 1;
+  font-size: 13px;
+  background: transparent;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-icon {
+  font-size: 14px;
+}
+
+
+.cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.cat-btn {
+  padding: 10px 12px;
+  font-size: 12px;
+  border: 1px solid #d0cfc7;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cat-btn:hover {
+  border-color: #d9400b;
+  color: #d9400b;
+}
+
+.cat-btn.active {
+  background-color: #d9400b;
+  color: #fff;
+  border-color: #d9400b;
+}
+
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.products-grid::-webkit-scrollbar { width: 4px; }
+.products-grid::-webkit-scrollbar-track { background: #f0efe8; border-radius: 4px; }
+.products-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+
+.product-card {
+  background-color: #faf9f6;
+  border: 1px solid #e8e6df;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: #1a1a1a;
+}
+
+.product-cat {
+  font-size: 11px;
+  color: #888;
+}
+
+.product-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: #d9400b;
+}
+
+.product-stock {
+  font-size: 11px;
+  color: #666;
+}
+
+.product-stock.low {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+
+.qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty-btn {
+  width: 26px;
+  height: 30px;
+  border: 1px solid #d0cfc7;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s;
+  flex-shrink: 0;
+}
+
+.qty-btn:hover {
+  background-color: #f0efe8;
+}
+
+.qty-val {
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 22px;
+  text-align: center;
+}
+
+/*buttons*/
+.btn {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: opacity 0.15s, transform 0.1s;
+  font-weight: 500;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: #d9400b;
+  color: #fff;
+  border-color: #c03a0a;
+}
+
+.btn-primary:hover {
+  background-color: #c03a0a;
+}
+
+.btn-success {
+  background-color: #27ae60;
+  color: #fff;
+  border-color: #229954;
+}
+
+.btn-success:hover {
+  background-color: #229954;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: #fff;
+  border-color: #c0392b;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ===== CART ===== */
+.cart-items {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 2px;
+}
+
+.cart-items::-webkit-scrollbar { width: 4px; }
+.cart-items::-webkit-scrollbar-track { background: #f0efe8; border-radius: 4px; }
+.cart-items::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+.cart-item {
+  border-bottom: 1px solid #f0efe8;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item-sub {
+  font-size: 12px;
+  color: #888;
+}
+
+.cart-subtotal {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+
+.total-box {
+  background-color: #faf9f6;
+  border: 1px solid #e8e6df;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.total-grand {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 15px;
+  border-top: 1px solid #e0e0d8;
+  padding-top: 8px;
+  margin-top: 6px;
+  color: #d9400b;
+}
+
+/* ===== CART ACTIONS ===== */
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.empty {
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+  padding: 24px 0;
+}
+
+
+.invoice {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.invoice-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.invoice-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #d9400b;
+  letter-spacing: 1px;
+}
+
+.invoice-date {
+  font-size: 11px;
+  color: #888;
+}
+
+.invoice-separator {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 8px 0;
+}
+
+.invoice-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 15px;
+  color: #d9400b;
+  border-top: 1px dashed #ccc;
+  padding-top: 8px;
+  margin-top: 6px;
+}
+
+.invoice-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+
+.toast {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  background-color: #27ae60;
+  color: #fff;
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 9999;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: opacity 0.3s;
+}
+
+/* responsive. Mon pire enemie */
+@media (max-width: 720px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .stat-val {
+    font-size: 18px;
+  }
+}

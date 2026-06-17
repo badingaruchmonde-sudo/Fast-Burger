@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Burger</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🍔 Fast Burger</h1>
+  </header>
+
+  <div class="stats-bar">
+
+    <div class="stat">
+      <div class="stat-val" id="stat-prods">0</div>
+      <div class="stat-lbl">Produits au menu</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-val" id="stat-cart">0</div>
+      <div class="stat-lbl">Articles au panier</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-val" id="stat-total">0</div>
+      <div class="stat-lbl">Montant total (FCFA)</div>
+    </div>
+  </div>
+
+  <div class="app">
+
+    <!--mon menu-->
+    <div class="panel" id="panel-menu">
+
+      <div class="panel-header">
+        <h2><i class="fa-solid fa-bars"></i> Menu</h2>
+      </div>
+
+      <!-- Formulaire ajout produit -->
+      <div class="add-form">
+
+        <div class="add-form-title">
+          <span>Ajouter un produit</span>
+          <button id="toggle-form" class="toggle-btn" aria-label="Afficher/masquer le formulaire">▲</button>
+        </div>
+
+        <div id="form-fields">
+
+          <div class="form-row">
+
+            <input type="text" id="p-nom" placeholder="Nom du produit" />
+            <input type="number" id="p-prix" placeholder="Prix (FCFA)" min="0" />
+
+          </div>
+
+          <div class="form-row">
+            <select id="p-cat">
+              <option value="">-- Catégorie --</option>
+              <option>Sandwich</option>
+              <option>Pizza</option>
+              <option>Boisson</option>
+              <option>Dessert</option>
+              <option>Autre</option>
+            </select>
+            <input type="number" id="p-stock" placeholder="Stock" min="0" />
+          </div>
+          <button class="btn btn-primary btn-full" id="btn-add-prod">+ Ajouter au menu</button>
+        </div>
+      </div>
+
+      <!-- Recherche -->
+      <div class="search-bar">
+        <span class="search-icon"></span> <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search" placeholder="Rechercher un produit..." />
+      </div>
+
+      <!-- Filtres catégories -->
+      <div class="cats" id="cats">
+        <button class="cat-btn active" data-cat="Tous">Tous</button>
+        <button class="cat-btn" data-cat="Sandwich">Sandwich</button>
+        <button class="cat-btn" data-cat="Pizza">Pizza</button>
+        <button class="cat-btn" data-cat="Boisson">Boisson</button>
+        <button class="cat-btn" data-cat="Dessert">Dessert</button>
+      </div>
+
+    
+      <div class="products-grid" id="products-grid">
+      </div>
+    </div>
+
+   
+    <div class="side-col">
+
+      <div class="panel" id="panel-cart">
+        <div class="panel-header">
+          <h2><i class="fa-solid fa-cart-arrow-down"></i>    Panier</h2>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+
+        <div class="total-box" id="total-box" style="display:none">
+          <div id="total-lines"></div>
+          <div class="total-grand">
+            <span>Total</span>
+            <span id="grand-total">0 FCFA</span>
+          </div>
+        </div>
+
+        <div class="cart-actions">
+          <button class="btn btn-primary btn-full" id="btn-invoice"> Générer la facture</button>
+          <button class="btn btn-danger btn-full" id="btn-clear"> Vider le panier</button>
+        </div>
+      </div>
+
+      <!-- Facture -->
+      <div class="panel" id="invoice-panel" style="display:none">
+        <div class="panel-header">
+          <h2>Facture</h2>
+        </div>
+        <div id="invoice-content"></div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
