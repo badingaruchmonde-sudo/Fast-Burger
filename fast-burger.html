@@ -97,7 +97,7 @@
 
       <div class="panel" id="panel-cart">
         <div class="panel-header">
-          <h2><i class="fa-solid fa-cart-arrow-down"></i>    Panier</h2>
+          <h2><i class="fa-solid fa-cart-arrow-down"></i>Panier</h2>
         </div>
         <div class="cart-items" id="cart-items"></div>
 
@@ -121,6 +121,19 @@
           <h2>Facture</h2>
         </div>
         <div id="invoice-content"></div>
+      </div>
+
+      <!-- Historique des ventes -->
+      <div class="panel" id="panel-history">
+        <div class="panel-header" style="display:flex;justify-content:space-between;align-items:center">
+          <h2><i class="fa-solid fa-clock-rotate-left"></i> Historique des ventes</h2>
+          <button class="toggle-btn" id="toggle-history" aria-label="Afficher/masquer l'historique">▲</button>
+        </div>
+        <div id="history-fields">
+          <div id="history-stats" class="history-summary"></div>
+          <div class="history-list" id="history-list"></div>
+          <button class="btn btn-danger btn-full" id="btn-clear-history" style="margin-top:8px"><i class="fa-solid fa-trash"></i> Effacer l'historique</button>
+        </div>
       </div>
 
     </div>
